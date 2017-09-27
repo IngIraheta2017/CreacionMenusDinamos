@@ -1,0 +1,9 @@
+squirrel_menu:
+    resource: "@SquirrelBundle/Resources/config/routing/menu.yml"
+    prefix:   /menu
+
+
+
+squirrel_homepage:
+    path:     /
+    defaults: { _controller: SquirrelBundle:Default:index }

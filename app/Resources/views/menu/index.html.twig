@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+                <ul>
+    {% for menu in menus %}
+        {{ _self.display_tree(menu) }}
+    {% endfor %}
+    </ul>
+
+    {% macro display_tree(level) %}
+        <li>{{ level.getNombreMenu() }}
+        {% if level.children|default() %}
+            <ul>
+            {% for child in level.children %}
+                {{ _self.display_tree(child) }}
+            {% endfor %}
+            </ul>
+        {% endif %}
+        </li>
+    {% endmacro %}
+
+{% endblock %}
